@@ -66,3 +66,33 @@
 .fa-shopping-basket {
   padding-left: 10px;
 }
+
+@media only screen and (max-width: 688px) {
+  .slider {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+  }
+  .title-1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .title-2 {
+    font-size: 30px;
+    text-align: start;
+  }
+  .slider-btn {
+    width: 100px;
+    height: 40px;
+    font-size: 10px;
+    margin-right: 90px;
+    margin-top: 20px;
+  }
+  .slider img {
+    width: 100%;
+    padding-left: 50px;
+  }
+}

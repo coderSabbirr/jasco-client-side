@@ -1,11 +1,9 @@
 import React from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Redirect, Route } from 'react-router';
 import useAuth from '../Hook/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
-    let location=useLocation();
-
     if (isLoading) {
         return (
             <div className="d-flex justify-content-center">
@@ -15,11 +13,24 @@ const PrivateRoute = ({ children, ...rest }) => {
             </div>
         )
     }
-    if(user.email){
-        return children;
-    }
-    return <Navigate to="/login"  state={{from:location}}/>
-    
+    return (
+        <Route
+            {...rest}
+            render={({ location }) => user.email ? children :
+                <Redirect
+                    to={{
+                        pathname: "/login",
+                        state: { from: location }
+                    }}
+
+                ></Redirect>
+
+            }
+        >
+
+
+        </Route>
+    );
 };
 
 export default PrivateRoute;

@@ -1,7 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../Hook/useAuth';
+import useFirebase from '../../Hook/useFirebase';
 import './Header.css';
+
 const Header = () => {
+
+    const { user } = useAuth();
+    const { logOut } = useFirebase();
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
@@ -15,17 +21,36 @@ const Header = () => {
                             <Link to="/" className="nav-link" >Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="shop" className="nav-link" >Shop</Link>
+                            <Link to="/shop" className="nav-link" >Shop</Link>
+                        </li>
+                        {/* <li className="nav-item ">
+                            <Link to="/about" className="nav-link" >About Us</Link>
                         </li>
                         <li className="nav-item ">
-                            <Link to="blogs" className="nav-link" >Blogs</Link>
+                            <Link to="/contact" className="nav-link" >Contact Us</Link>
+                        </li> */}
+                        {user.email &&
+                            <li className="nav-item ">
+                                <Link to="/dashboard" className="nav-link" >Dashboard</Link>
+                            </li>
+                        }
+                        <li className="user">
+                            {user?.photoURL ?
+                                <img className="px-2  user" src={user.photoURL} alt="" /> :
+                                <img className="px-2 " src="https://i.ibb.co/5r8HpR3/user-1.png" alt="" />
+                            }
                         </li>
-                        <li className="nav-item ">
-                            <Link to="about" className="nav-link" >About Us</Link>
-                        </li>
-                        <li className="nav-item ">
-                            <Link to="contact" className="nav-link" >Contact Us</Link>
-                        </li>
+                       {user.displayName &&  <li className=" user-name">{user?.displayName}</li>}
+                       
+                        {user.email ?
+
+                            <li className="nav-item dashbord">
+                                <button className="nav-link" onClick={logOut}>Logout</button>
+                            </li> :
+                            <li className="nav-item  ">
+                                <NavLink to="/login" className="nav-link sign-in" >Sign In</NavLink>
+                            </li>
+                        }
 
                     </ul>
                 </div>

@@ -29,7 +29,6 @@ const ProductView = () => {
                 <div className="product-content">
                     <h2 className="product-title">{title}</h2>
                     <h2 className="product-price">(approx. ${price})</h2>
-                    {/* <h3 className="product-category">category: {category}</h3> */}
                     <p className="product-description">{description}</p>
                     <div className="produt-btn">
                         <Link to={`/booking/${_id}`}><button className="buy-now-btn">BUY</button></Link>

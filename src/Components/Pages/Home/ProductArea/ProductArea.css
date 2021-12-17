@@ -22,4 +22,8 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+  .productsarea .SingleProduct .card {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }

@@ -5,8 +5,6 @@ import './SingleProduct.css';
 const SingleProduct = ({ prodcut }) => {
     const { _id,title, price, image, rate,count } = prodcut;
     const ratingNumber = parseInt(rate);
-    console.log(rate)
-
     return (
         
             <div className="SingleProduct">

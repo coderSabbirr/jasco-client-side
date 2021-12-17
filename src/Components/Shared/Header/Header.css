@@ -13,3 +13,25 @@ nav {
   padding: 25px !important;
   background-color: #ffffff;
 }
+.sign-in {
+  color: #fb5d5d !important;
+  margin-left: 50px;
+}
+.dashbord button {
+  background-color: transparent !important;
+  margin-left: 50px;
+  padding: 3px 20px;
+  border-radius: 15px !important;
+}
+.user img {
+  width: 55px;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 688px) {
+  .dashbord button {
+    background-color: transparent !important;
+    margin-left: 120px;
+    width: 80px;
+    border-radius: 15px !important;
+  }
+}

@@ -75,3 +75,15 @@
   color: #575656 !important;
   font-weight: 600;
 }
+@media only screen and (max-width: 688px) {
+  .best-seller {
+    font-size: 14px;
+  }
+  .single-col,
+  .center-col {
+    padding-right: 0;
+  }
+  .item-title {
+    font-size: 14px !important;
+  }
+}
