@@ -14,7 +14,7 @@ const ReviewAdd = () => {
         const rating = parseInt(data.rating)
 
         if (5 >= rating) {
-            fetch('http://localhost:5000/addreview', {
+            fetch('https://arcane-ravine-56101.herokuapp.com/addreview', {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(data),
@@ -28,7 +28,7 @@ const ReviewAdd = () => {
 
         }
         else {
-            alert('plase 1-5 star')
+            alert('please  1-5 star')
         }
     }
     return (

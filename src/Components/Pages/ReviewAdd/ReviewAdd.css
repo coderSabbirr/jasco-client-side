@@ -20,3 +20,15 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+@media only screen and (max-width: 688px) {
+  .review-from {
+    height: 320px;
+    width: 350px;
+
+    padding-top: 20px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+  }
+}

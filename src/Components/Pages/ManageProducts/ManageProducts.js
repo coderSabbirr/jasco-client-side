@@ -4,7 +4,7 @@ import SingleProducts from './SingleProducts/SingleProducts';
 const ManageProducts = () => {
     const [mangaProduct, setMagaProduct] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://arcane-ravine-56101.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setMagaProduct(data))
     }, [])

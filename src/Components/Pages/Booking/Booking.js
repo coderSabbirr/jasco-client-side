@@ -11,7 +11,7 @@ const Booking = () => {
     const [booking, setBooking] = useState([])
     const {user}=useAuth();
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${productId}`)
+        fetch(`https://arcane-ravine-56101.herokuapp.com/product/${productId}`)
             .then(res => res.json())
             .then(data => setBooking(data))
     }, [productId])
@@ -26,7 +26,7 @@ const Booking = () => {
         data.user_email=user.email;
         data.status = update;
         data.booking_deatils = booking;
-        fetch('http://localhost:5000/orders', {
+        fetch('https://arcane-ravine-56101.herokuapp.com/orders', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

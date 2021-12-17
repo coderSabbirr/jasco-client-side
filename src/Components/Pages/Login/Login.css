@@ -76,3 +76,29 @@
   padding-right: 150px;
   font-weight: 500;
 }
+@media only screen and (max-width: 688px) {
+  .sign-up-btn {
+    padding: 12px 100px;
+  }
+  .login-btn {
+    padding: 12px 100px;
+  }
+  .create-account {
+    font-size: 14px;
+    padding-top: 25px;
+    padding-right: 0px;
+    font-weight: 500;
+  }
+  .google-login {
+    padding: 10px 50px;
+    background-color: transparent;
+    font-weight: 500;
+    border-radius: 15px;
+  }
+  .Already-account {
+    font-size: 14px;
+    padding-top: 25px;
+    padding-right: 0px;
+    font-weight: 500;
+  }
+}

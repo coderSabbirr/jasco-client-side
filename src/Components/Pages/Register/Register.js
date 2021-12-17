@@ -39,7 +39,7 @@ const Register = () => {
             <Grid item sx={{ mt: 8 }} xs={12} md={12}>
                 <h1 className="login-heading">Sign Up</h1>
                 <button className="google-login" onClick={handleGoogleSignIn} ><span className="google-logo"><img src="https://i.ibb.co/GJ6gbG1/google-logo-9808.png" alt="" /></span> Google Sign In</button>
-                <p className="or-sign">---------------------- or Sign Up with Email -------------------------</p>
+                <p className="or-sign">------------or Sign Up with Email------------</p>
                 {!isLoading && <form onSubmit={handleLoginSubmit}>
                     <TextField className="your-email"
                         sx={{ width: '40%', m: 1 }}

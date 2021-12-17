@@ -4,7 +4,7 @@ const SingleProducts = ({ product }) => {
     const { title, price, image,_id } = product;
     const handleDelete = () => {
 
-        const url = `http://localhost:5000/products/${_id}`
+        const url = `https://arcane-ravine-56101.herokuapp.com/products/${_id}`
         fetch(url, {
             method: 'DELETE'
         })

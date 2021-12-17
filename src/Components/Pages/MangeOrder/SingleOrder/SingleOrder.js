@@ -8,7 +8,7 @@ const SingleOrder = ({order}) => {
     const handleDelete = id => {
        
            
-                const url = `http://localhost:5000/orders/${id}`
+                const url = `https://arcane-ravine-56101.herokuapp.com/orders/${id}`
                 fetch(url, {
                     method: 'DELETE'
                 })
@@ -27,7 +27,7 @@ const SingleOrder = ({order}) => {
         const update = {
             status: "Shipped"
         }
-        const url = `http://localhost:5000/ordersupdate/${id}`;
+        const url = `https://arcane-ravine-56101.herokuapp.com/ordersupdate/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

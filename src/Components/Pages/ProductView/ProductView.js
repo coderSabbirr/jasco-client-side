@@ -8,9 +8,9 @@ const ProductView = () => {
     let { productId } = useParams()
     const location = useLocation();
     const [product, setProduct] = useState([])
-    const sharelink = (`http://localhost:3000${location.pathname}`)
+    const sharelink = (`https://jesco-shop.web.app${location.pathname}`)
     useEffect(() => {
-        const url = `http://localhost:5000/product/${productId}`
+        const url = `https://arcane-ravine-56101.herokuapp.com/product/${productId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -22,7 +22,7 @@ const ProductView = () => {
 
     return (
         <div className="container product-view">
-            <div className="d-flex">
+            <div className="d-flex prodcout-sec">
                 <div>
                     <img className="product-image" src={image} alt={title} />
                 </div>

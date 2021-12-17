@@ -39,10 +39,10 @@ const handleGoogleSignIn = () => {
             {isLoading && <CircularProgress />}
                 <h1 className="login-heading">Login</h1>
                 <button className="google-login" onClick={handleGoogleSignIn} ><span className="google-logo"><img src="https://i.ibb.co/GJ6gbG1/google-logo-9808.png" alt="" /></span> Google Sign In</button>
-                <p className="or-sign">---------------------- or Sign in with Email -------------------------</p>
+                <p className="or-sign">--------------- or Sign in with Email ---------------</p>
                 <form onSubmit={handleLoginSubmit}>
                     <TextField className="your-email"
-                        sx={{ width: '40%', m: 1 }}
+                        sx={{ width: '40%', m: 1} }
                         id="standard-basic"
                         label="Your Email" 
                         name="email"

@@ -4,7 +4,7 @@ import SingleProduct from './SingleProduct.js/SingleProduct';
 const ProductArea = () => {
     const [prodcuts, setproducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://arcane-ravine-56101.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setproducts(data))
     }, [])

@@ -5,7 +5,7 @@ const SingleReview = ({review}) => {
 
     const handleDelete = () => {
 
-        const url = `http://localhost:5000/review/${_id}`
+        const url = `https://arcane-ravine-56101.herokuapp.com/review/${_id}`
         fetch(url, {
             method: 'DELETE'
         })

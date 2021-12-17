@@ -7,7 +7,7 @@ const AddProducts = () => {
         const rating = parseInt(data.rate)
 
       if(5 >= rating ){
-            fetch('http://localhost:5000/addprodcut', {
+            fetch('https://arcane-ravine-56101.herokuapp.com/addprodcut', {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(data),
