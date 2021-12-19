@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router-dom';
+import useAuth from '../../Hook/useAuth';
 import './Booking.css';
 
 
 const Booking = () => {
     const { productId } = useParams()
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,reset } = useForm();
     const [booking, setBooking] = useState([])
+    const {user}=useAuth();
     useEffect(() => {
         fetch(`http://localhost:5000/product/${productId}`)
             .then(res => res.json())
@@ -19,6 +21,9 @@ const Booking = () => {
         const update = {
             status: "Pending"
         }
+        data.time=new Date().toLocaleString();
+        data.order_id=Math.floor((Math.random() * 10000000000000) + 1)
+        data.user_email=user.email;
         data.status = update;
         data.booking_deatils = booking;
         fetch('http://localhost:5000/orders', {
@@ -28,7 +33,7 @@ const Booking = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-
+                reset()
             })
     }
     return (

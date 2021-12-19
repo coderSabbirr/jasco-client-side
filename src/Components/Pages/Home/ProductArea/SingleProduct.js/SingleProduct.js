@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import './SingleProduct.css';
 
 const SingleProduct = ({ prodcut }) => {
-    const { _id,title, price, image, rating } = prodcut;
-    const ratingNumber = parseInt(rating.rate);
+    const { _id,title, price, image, rate,count } = prodcut;
+    const ratingNumber = parseInt(rate);
+    console.log(rate)
 
     return (
         
@@ -17,7 +18,8 @@ const SingleProduct = ({ prodcut }) => {
                                 return <i className="fas rating fa-star" />
 
                             })}
-                        </span><span className="rating-count">({rating.count} Review)</span>
+                        </span>
+                        <span className="rating-count">({count} Review)</span>
                         <h5 className="product-title">
                             <Link to={`productview/${_id}`}>{title}</Link>
                         </h5>
